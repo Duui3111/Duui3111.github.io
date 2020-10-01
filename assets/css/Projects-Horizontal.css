@@ -1,0 +1,105 @@
+.projects-horizontal {
+  color: #313437;
+  background-color: #fff;
+}
+
+.projects-horizontal p {
+  color: #7d8285;
+}
+
+.projects-horizontal h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .projects-horizontal h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.projects-horizontal .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 10px;
+}
+
+.projects-horizontal .projects {
+  padding-bottom: 40px;
+}
+
+.projects-horizontal .item {
+  padding-top: 60px;
+  min-height: 160px;
+}
+
+@media (max-width:767px) {
+  .projects-horizontal .item {
+    padding-top: 40px;
+    min-height: 160px;
+  }
+}
+
+.projects-horizontal .item .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: inherit;
+}
+
+@media (max-width:991px) {
+  .projects-horizontal .item .name {
+    margin-top: 22px;
+  }
+}
+
+.projects-horizontal .item .description {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.myButton {
+  background-color: #001aff;
+  border-radius: 20px;
+  border: 1px solid #002fff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 6px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+  background-color: #002fff;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.button {
+  background-color: #000000;
+  border: 20px;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+b {
+}
+
