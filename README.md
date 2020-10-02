@@ -27,7 +27,6 @@
   border-radius: 25px;
 }
 </style>
-    </nav>
     <div class=" "> 
         <div class="container">
             <div class="  "> 
@@ -39,29 +38,6 @@
             </div>
         </div>
     </div>
-    <main class="page"></main>
-    <section class="clean-block about-us">
-        <div class="container">
-            <div class="block-heading"></div>
-            <div class="row justify-content-center">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card clean-card text-center">
-                        <div class="card-body info"><a href="https://www.youtube.com/channel/UCYvfm2YP2Q77WuRWCHHVYwQ?view_as=subscriber" class="button">Youtube</a></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card clean-card text-center">
-                        <div class="card-body info"><a href="https://github.com/Duui3111" class="button">github</a></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card clean-card text-center">
-                        <div class="card-body info"><a href="https://discord.gg/r9zHtSn" class="button">Discord</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <div class="box"></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
