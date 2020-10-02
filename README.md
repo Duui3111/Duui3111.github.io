@@ -12,18 +12,6 @@
 </head>
 
 <body>
-       <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#">                                                                      </a><button class="navbar-toggler" data-toggle="collapse"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navcol-1">
-    <ul class="nav navbar-nav ml-auto">
-         <li role="presentation" class="nav-item"><a class="nav-link"></a></li>
-        <li role="presentation" class="nav-item"><a class="nav-link active"></a></li> 
-        <li role="presentation" class="nav-item"><a class="nav-link" > ‎</a></li>
-        <li role="presentation" class="nav-item"><a class="nav-link" > ‎</a></li>
-        <li role="presentation" class="nav-item"><a class="nav-link" > ‎</a></li>
-        <li role="presentation" class="nav-item"><a class="nav-link active" href="about"> ‎</a></li>
-        <li role="presentation" class="nav-item"></li>
-    </ul>
-</div></div>
    <style>
 .Rbutton {
   background-color: #000000;
