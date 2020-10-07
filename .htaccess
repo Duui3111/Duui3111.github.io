@@ -7,12 +7,5 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 
 ErrorDocument 404 /404.html
 
-
-
-Options -MultiViews
-
-RewriteRule ^pages(/.*?)(?:\.html)?$ $1 [R=301,L]
-RewriteCond %{DOCUMENT_ROOT}/pages/$1 -f
-RewriteRule (.+\.(css|js|png|jpg|gif))$ /pages/$1 [L]
-RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
-RewriteRule ^([^.]+)$ /companies/$1.html [L]
+RewriteEngine On
+RewriteRule ^shopping/(.*)$ /$1 [L]
