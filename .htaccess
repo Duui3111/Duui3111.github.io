@@ -4,7 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f  
 
 RewriteRule ^(.*)$ $1.html [NC,L] 
-RewriteRule ^pages(/.*|)$ $1 [L,NC] 
+RewriteRule ^pages?$ $1 [L,NC] 
 
 ErrorDocument 404 /404.html
 
@@ -24,3 +24,13 @@ RewriteRule ^ %1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule (?!^folder/)^(.*)$ /pages/$1 [L,NC]
+
+
+
+Options -MultiViews
+
+RewriteRule ^pages(/.*?)(?:\.html)?$ $1 [R=301,L]
+RewriteCond %{DOCUMENT_ROOT}/pages/$1 -f
+RewriteRule (.+\.(css|js|png|jpg|gif))$ /pages/$1 [L]
+RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+RewriteRule ^([^.]+)$ /companies/$1.html [L]
