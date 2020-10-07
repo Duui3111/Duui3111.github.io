@@ -10,5 +10,5 @@ ErrorDocument 404 /404.html
 Options +FollowSymLinks
 RewriteEngine On
 RewriteCond %{REQUEST_URI}/ pages
-RewriteRule ^(.*) http://www.somewhere.com/%{REQUEST_URI} [R=302,NC]
-RewriteRule ^(.*) http://www.somewhere.com/pages/%{REQUEST_URI} [R=302,NC]
+RewriteRule ^(.*) %{REQUEST_URI} [R=302,NC]
+RewriteRule ^(.*) /pages/%{REQUEST_URI} [R=302,NC]
