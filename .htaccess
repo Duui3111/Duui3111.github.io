@@ -8,6 +8,7 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 RewriteRule ^(.*)$.html /$1 [L]
 Redirect ^(.*)$.html /$1 [L]
 Redirect /testt.html Home.html
+Redirect /index.html /
 
 ErrorDocument 404 /404.html
 
