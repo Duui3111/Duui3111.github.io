@@ -11,7 +11,7 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 ErrorDocument 404 /404.html
 
 RewriteEngine on 
-Redirect 301 /index https://duui3111.github.io
+Redirect /index https://duui3111.github.io
 
 RewriteEngine On
 RewriteRule ^pages/(.*)$ /$1 [L]
