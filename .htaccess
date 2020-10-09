@@ -5,11 +5,13 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 
 RewriteRule ^(.*)$ $1.html [NC,L] 
 
-RewriteRule ^(.*)$.html /$1 [L]
-Redirect 301 ^(.*)$.html /$1 [L]
-Redirect 301 /index https://duui3111.github.io
+# RewriteRule ^(.*)$.html /$1 [L]
+# Redirect 301 ^(.*)$.html /$1 [L]
 
 ErrorDocument 404 /404.html
+
+RewriteEngine on 
+Redirect 301 /index https://duui3111.github.io
 
 RewriteEngine On
 RewriteRule ^pages/(.*)$ /$1 [L]
