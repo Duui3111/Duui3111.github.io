@@ -6,7 +6,6 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L] 
 
 # RewriteRule ^(.*)$.html /$1 [L]
-# Redirect 301 ^(.*)$.html /$1 [L]
 
 ErrorDocument 404 /404.html
 
