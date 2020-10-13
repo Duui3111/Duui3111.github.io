@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube Subcriber Count</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="odometer-theme.min.css">
+</head>
+<body>  
+    <form style="display: flex;">
+        <input type="text" placeholder="Enter Youtube api key v3" id="ytapikey" style=" width: 25%;">
+        <input type="text" placeholder="Enter Channel ID" id="ytid" style="width: 100%;">
+        <button id="SubmitButton" type="button" value="Submit">Submit</button>
+    </form>
+
+    <div id="center" style="display: none;">
+        <img id="thumbnail" style="border-radius: 50%; margin: 0 auto;" height="240" width="240">
+        <p id="Name"></p>
+        <p id="SubcribersTitle" class="titles">Subcribers</p> 
+        <p id="Subs" class="nums odometer"></p>
+    </div>
+
+    <div id="left" style="display: none;">
+        <p id="TotalViewsTitle" class="titles">Total Views</p> 
+        <p id="TotalViews" class="nums odometer"></p>
+    </div>
+
+    <div id="right" style="display: none;">
+        <p id="TotalVideosTitle" class="titles">Total Videos</p>
+        <p id="TotalVideos" class="nums odometer"></p> 
+    </div>
+
+    <script src="odometer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

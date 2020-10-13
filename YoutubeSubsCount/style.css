@@ -1,0 +1,68 @@
+#center {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#left {
+    position: relative;
+    left: -500px;
+    top: -250px;
+}
+
+#right {
+    position: relative;
+    left: 500px;
+    top: -450px;
+}
+
+.nums {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.titles {
+    padding: 5px;
+    line-height: 20px;
+    margin-bottom: -10px;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#Name {
+    padding: 7px; 
+    line-height: 20px;
+    margin-bottom: -5px;
+    margin-top: 15px;
+    color: blue;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+input {
+    margin: 10px 15px;
+    border-radius: 5px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 10px #DDDDDD;
+}
+
+#SubmitButton {
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    background: #008CBA;
+    width: 100px;
+}
+
+html, body {
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
+    font-family: sans-serif;
+    text-align: center; 
+}
