@@ -1,0 +1,18 @@
+#left {
+    position: relative;
+    left: -500px;
+    top: -250px; 
+}
+
+#right {
+    position: relative;
+    left: 500px;
+    top: -450px;  
+}
+
+#center {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    flex-direction: column;
+}

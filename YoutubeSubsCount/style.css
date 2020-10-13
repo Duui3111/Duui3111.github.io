@@ -1,21 +1,8 @@
-#center {
-    display: flex;
-    height: 90%;
-    justify-content: center;
-    flex-direction: column;
-}
+#center { margin: 50px 0; }
 
-#left {
-    position: relative;
-    left: -500px;
-    top: -250px;
-}
+#left { margin: -200px 0 0 -1000px; }
 
-#right {
-    position: relative;
-    left: 500px;
-    top: -450px;
-}
+#right { margin: -200px 0 0 1000px; }
 
 .nums {
     margin: 10px;
@@ -27,6 +14,7 @@
     padding: 5px;
     line-height: 20px;
     margin-bottom: -10px;
+    /* margin: 10px; */
     font-weight: bold;
     font-size: 35px;
 }
