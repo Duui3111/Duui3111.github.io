@@ -71,17 +71,6 @@
 	<em id="pr3" style="display:inline-block; padding:1em;">change event</em>
 	<em id="pr4" style="display:inline-block; padding:1em;">input event</em>
 
-	<script>
-	function update(picker, selector) {
-		document.querySelector(selector).style.background = picker.toBackground()
-	}
-
-	// triggers 'onInput' and 'onChange' on all color pickers when they are ready
-	jscolor.trigger('input change');
-	</script>
-
-
-
 
 
 	<h2>Example 6 - Presets</h2>
@@ -140,6 +129,14 @@
 
 	</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+		<script>
+	function update(picker, selector) {
+		document.querySelector(selector).style.background = picker.toBackground()
+	}
+
+	// triggers 'onInput' and 'onChange' on all color pickers when they are ready
+	jscolor.trigger('input change');
+	</script>
 
 </body>
 </html>
