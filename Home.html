@@ -9,27 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-  .offcanvas-header{ display:none; }
-
 @media (max-width: 992px) {
-  #cpse{  visibility: none; }
-  .navbar-collapse {
-    position: fixed;
-    top:0; 
-    bottom: 0;
-    left: 100%;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow-y: auto;
-    visibility: hidden;
-    background-color: black;
-    transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
-  }
-  .navbar-collapse.show {
-    visibility: visible;
-    transform: translateX(-100%);
-  }
+  #cpse{  visibility: none;
 }</style>
 </head>
 <body>
@@ -55,20 +36,6 @@
      </button>
     </div>
 </nav>
-  
-  <script>
-  $("[data-trigger]").on("click", function(){
-    var trigger_id =  $(this).attr('data-trigger');
-    $(trigger_id).toggleClass("show");
-    $('body').toggleClass("offcanvas-active");
-});
-
-// close button 
-$(".btn-close").click(function(e){
-    $(".navbar-collapse").removeClass("show");
-    $("body").removeClass("offcanvas-active");
-}); 
-  </script>
 <div class="container">
   
 </div>
