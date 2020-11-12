@@ -5,13 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
   .offcanvas-header{ display:none; }
 
 @media (max-width: 992px) {
-  .offcanvas-header{ display:block; }
+  #cpse{  visibility: none; }
   .navbar-collapse {
     position: fixed;
     top:0; 
@@ -45,11 +46,13 @@
       <button class="btn btn-outline-danger btn-close float-right"> &times Close </button>
       <h5 class="py-2 text-white">Main navbar</h5>
     </div>
+     <button id="cpse" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="visibility: hidden;">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="apps/applist">Apps</a></li>
       <li><a href="repo">Repo</a></li>
       <li><a href="about">About</a></li>
     </ul>
+     </button>
     </div>
 </nav>
   
