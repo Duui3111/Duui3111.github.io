@@ -11,21 +11,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>                        
+      </button>
       <a class="navbar-brand" href="/">Home</a>
     </div>
-<!--     <ul class="nav navbar-nav">
-      <li class="active"><a href="index">Home</a></li>
-    </ul> -->
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="apps/applist">Apps</a></li>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="apps/applist">Apps</a></li>
       <li><a href="repo">Repo</a></li>
       <li><a href="about">About</a></li>
-    </ul>
+      </ul>
+    </div>
   </div>
-</nav>  
+</nav>
     <section class="clean-block about-us">
         <div class="container">
             <div class="block-heading"></div>
