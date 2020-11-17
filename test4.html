@@ -2,7 +2,11 @@
 
 <script>
   let cart = document.getElementById("Cart");
-  for(int i = 0; i < cart.Lenght; i++) {
-  cart.innerHTML = i;
-  }
+  let cartbtn = document.getElementById("cartbtn");
+  
+  cartbtn.addEventListener('click', () => {
+   for(int i = 0; i < cart.Lenght; i++) {
+      cart.innerHTML = i;
+    }
+  })
 </script>
