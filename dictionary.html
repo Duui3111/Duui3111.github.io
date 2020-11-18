@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Dictionary App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="card">
+  <div class="card-body">
+    <h2 class="m-2 mb-4">Dictionary App</h2>
+       <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Enter a word" id="myword">
+    <div class="input-group-append">
+      <button class="btn btn-danger" onclick="getMeaning()" >Get Meaning</button>
+    </div>
+  </div>
+  </div>
+</div>
+    <p/>
+    <div class="card means" style="width: 100%; display: none">
+  <div class="card-body">
+    <h5 class="card-title"><div class="word"></div></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><div class="type"></div></h6>
+    <p class="card-text"><div class="defs"></div></p>
+  </div>
+</div>
+<script>
+
+const getMeaning = () => {
+  document.querySelector('.defs').innerHTML = ''
+  document.querySelector('.means').style.display = 'block'
+  let word = document.querySelector('#myword').value
+  fetch('https://definitionapi.cf/'+word).then(res => res.json()).then(data => {
+    let word = document.querySelector('.word')
+    let type = document.querySelector('.type')
+    let defs = document.querySelector('.defs')
+    if(data.word == undefined && data.type == undefined) {
+      word.innerHTML = data.error
+      type.innerHTML = 'Contact us at '+data.contact_us
+    } else {
+      word.innerHTML = data.word
+      type.innerHTML = data.type
+      data.definitions.forEach(def => {
+      defs.innerHTML += `<li>${def}</li>`
+    })
+    }
+  })
+}
+</script>
+  </body>
+</html>
