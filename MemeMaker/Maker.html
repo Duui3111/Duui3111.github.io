@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Maker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>.meme-txt { border: #FFF 1px dotted; position: absolute !important; top: 11%;  left: 1%; padding: 10px; min-width: 200px;  cursor: move; font-size: 24px; }</style>
+    <script>function showPreview(File){if (File.files[0]){var fileReader=new FileReader(); fileReader.onload=(e)=> $("#meme-div img").attr('src', e.target.result); fileReader.readAsDataURL(File.files[0]);}}function createTextArea(){$("#meme-div").append("<div contentEditable='true' class='meme-txt'></div>"); $(".meme-txt").draggable().focus();}$(document).ready(function (e){$("#image-preview").on('click', function (){var canvas=document.getElementById("meme-preview"); var ctx=canvas.getContext("2d"); image=new Image(0, 0); image.onload=function (){canvas.width=this.naturalWidth; canvas.height=this.naturalHeight; ctx.drawImage(this, 0, 0); ctx.font=$('#FontSize').val() + "px Impact"; ctx.lineWidth=$('#LineWidth').val(); $("#ColorPickerStroke").each(function(){ctx.strokeStyle=$(this).val()}); $("#ColorPicker").each(function(){ctx.fillStyle=$(this).val()}); $(".meme-txt").each(function (){ctx.fillText($(this).text().toUpperCase(), (((parseInt($(this).css("left")) + parseInt($(this).css("padding"))) / $("#meme-div").width()) * canvas.width)-40, (((parseInt($(this).css("top")) + 3 * parseInt($(this).css("padding"))) / $("#meme-div").height()) * canvas.height)-300); ctx.strokeText($(this).text().toUpperCase(), (((parseInt($(this).css("left")) + parseInt($(this).css("padding"))) / $("#meme-div").width()) * canvas.width)-40, (((parseInt($(this).css("top")) + 3 * parseInt($(this).css("padding"))) / $("#meme-div").height()) * canvas.height)-300);});}; image.src=$("#img-meme").attr("src");});});</script>
+</head>
+<body>
+    <div class="container m-0">
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="pt-3 mb-1 row">
+                    <div class="row-ml-1 col-sm-7"><input type="file" class="form-control" onChange="showPreview(this);" /></div>
+                    <div class="row-ml-1 col-sm-2"><input type="button" value="Add Text" class="btn btn-success" onClick="createTextArea()" /></div>
+                    <div class="mt-3 col-sm-15"><label for="ColorPicker">Background Color: </label><input type="color" id="ColorPicker"><span style="margin-left: 40px;"></span><label for="ColorPickerStroke">Stroke Color: </label><input type="color" id="ColorPickerStroke" value="#ffffff"></div>
+                    <div class="mt-3 col-sm-15"><label for="FontSize">Font Size: </label><input type="range" min="1" max="500" value="50" id="FontSize" onchange="$('#FontSizeText').text($(this).val())"><span id="FontSizeText">50</span><span>px</span><span style="margin-left: 40px;"></span><label for="LineWidth">Line Width: </label><input type="range" min="1" max="100" value="3" id="LineWidth" onchange="$('#LineWidthText').text($(this).val())"><span id="LineWidthText">3</span><span>px</span></div>
+                </div>
+                <div class="pt-3" id="meme-div"><img src="default.jpg" id="img-meme" style="width: 100%;" /></div>
+                <div class="pt-3"><input type="button" id="image-preview" class="btn btn-primary" value="Show Preview" /></div>
+            </div>
+            <div class="col pt-5"><h2>Preview</h2><canvas id="meme-preview" class="border position-relative w-100 h-75"></canvas></div>
+        </div>
+    </div>
+</body>
+</html>
