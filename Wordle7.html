@@ -150,7 +150,7 @@ document.getElementById("check").onclick = function() {
 
             console.log(CompArr(ArrWord, ArrGuessWord));
 
-            if(document.getElementById("guess").value == Word)
+            if(document.getElementById("guess").value.toUpperCase() == Word.toUpperCase())
             {
                 document.cookie = 'Done=1; expires='+midnight+'; path=/';
                 HideInput();
