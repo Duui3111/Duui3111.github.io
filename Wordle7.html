@@ -136,8 +136,10 @@ document.getElementById("check").onclick = function() {
             SetChar(ArrGuessWord);
 
             let a = false;
-            for(let i = 0; i < x.length; i++) 
+            for(let i = 0; i < x.length; i++) {
                 if(x[i] != 0 && ArrWord.length == 5) a = true;
+                x  = [];
+             }
             if(a == true) {
                 document.getElementById("Last").style = "display:block";
                 document.getElementById("Last").innerHTML += ("You Got " + Word + " Correct With " + trys + " remanding");
