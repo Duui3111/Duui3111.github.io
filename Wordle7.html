@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .CBox {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 5px;
+            outline: 2px solid black;
+        }
+     
+        #check {
+            background-color: rgb(0, 192, 0);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 5px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;     
+        }
+
+        #guess[type=text] {
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome To Wordle7. In Beta There Could Be Still Some Bugs</h1>
+    <h2>You Have 7 try's To guess The Word Of The day.</h2>
+    <h2 id="trys">try's remanding 7</h2>
+
+    <div id="CDiv">
+        <h1 id="C0" class="CBox"></h1>
+        <h1 id="C1" class="CBox"></h1>
+        <h1 id="C2" class="CBox"></h1>
+        <h1 id="C3" class="CBox"></h1>
+        <h1 id="C4" class="CBox"></h1>
+    </div>
+    <div id="Last" style="display: none;"></div>
+
+    <p><input type="text" id="guess"><button id="check">Check</button></p>
+</body>
+<script>
+
+    let Words = [
+        "trunk","Shake","Shame", "theft",
+        "slant", "water", "lease", "linen"
+    ]
+
+    var randomIndex = Math.floor(Math.random() * Words.length); 
+    var _Word = Words[randomIndex];
+
+    var midnight = new Date();
+    midnight.setHours(23,59,59,0);
+    
+    let x = [];
+    let guessCount = 0;
+    let trys = 6;
+
+    function HideInput() {
+        document.getElementById("check").style = "display:none";
+        document.getElementById("guess").style = "display:none";
+    }
+
+    function SetChar(Arr) {
+        for(let i = 0; i < 5; i++) 
+            document.getElementById("C"+i).innerHTML = Arr[i];
+    }
+
+    function CompArr(Arr1, Arr2) {
+        for(let i = 0; i < Arr1.length; i++)
+            if(Arr1[i] == Arr2[i]) 
+            {
+                x.push(1);
+                document.getElementById("C"+i).style = "background: green";
+            }
+            else 
+            {
+                x.push(0);
+                document.getElementById("C"+i).style = "background: red";
+            }
+        return x;
+    }
+function SetCookie(set) {
+        document.cookie= set+' expires='+midnight+'; path=/';
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            // console.log((c.substring(nameEQ.length,c.length)));
+
+        }
+        return (c.substring(nameEQ.length,c.length));
+    }
+
+    window.onload = (event) => { 
+        // document.cookie= "Done=1;";
+        //  SetCookie("Done=1"); 
+        if(readCookie("Done") != 1) SetCookie("Word="+_Word+";"); 
+        else HideInput();
+    }
+document.getElementById("check").onclick = function() {
+
+        // document.cookie = "Word: " + Word;
+
+        if(document.getElementById("guess").value.length == 5)
+        {
+            document.getElementById("trys").innerHTML = "try's remanding " + trys;
+
+            console.log(readCookie("Word"));
+            
+            var Word = _Word; //"Shake";
+
+            let ArrGuessWord = document.getElementById("guess").value.split('');
+            let ArrWord = Word.split('');
+
+            // console.log(ArrWord);
+            // console.log(ArrGuessWord);
+
+            SetChar(ArrGuessWord);
+
+            let a = false;
+            for(let i = 0; i < x.length; i++) 
+                if(x[i] != 0 && ArrWord.length == 5) a = true;
+            if(a == true) {
+                document.getElementById("Last").style = "display:block";
+                document.getElementById("Last").innerHTML += ("You Got " + Word + " Correct With " + trys + " remanding");
+                document.getElementById("CDiv").style = "display:none";
+                document.getElementById("trys").style = "display:none";
+            }
+
+            console.log(CompArr(ArrWord, ArrGuessWord));
+
+            if(document.getElementById("guess").value == Word)
+            {
+                document.cookie = 'Done=1; expires='+midnight+'; path=/';
+                HideInput();
+            }
+            else 
+            {
+                guessCount++, trys--;
+            }
+
+            if(guessCount >= 7) {
+                document.getElementById("Last").innerHTML += "no trys Left. Try Again Tomorrow";
+                HideInput();
+                return;
+            }
+        }
+    }
+</script>
+</html>
