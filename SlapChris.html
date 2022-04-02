@@ -1,0 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<center>
+    <h1 style="font-size: 150px" id="KMH">0 km/h</h1>
+</center>
+
+<center style="margin-top: 20%">
+    <img class="image_hand" id="hand" style="margin-left: 10%;" src="hand.png" hight="100px" width="120px">
+    <img class="image_chris" style="margin-left: 40%;" src="chrisrock.jpg" id="chris" hight="100px" width="120px">
+</center>
+
+<script>
+    let seconds = 0;
+
+    $("#hand").draggable({
+        drag: function () { seconds++; },
+        stop: function () {
+            console.log(seconds);
+            $("#KMH").text(((50 - seconds) < 0) ?  1 : (50 - seconds) + " km/h"); 
+        }
+    }); 
+    
+</script>
